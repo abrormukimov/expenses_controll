@@ -16,3 +16,4 @@ RSpec.describe Expense, type: :model do
     it { should have_many(:groups).dependent(:destroy) }
   end
 end
+ 
