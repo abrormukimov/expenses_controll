@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Expense Management</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <body class="d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <%= render 'shared/application_nav' %>
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column ">
+      
+      <div class="text-center">
+        <%= render 'shared/alerts' %> 
+        <%= yield %>
+      </div>
+
+
+      <%= render 'shared/application_footer' %>
+      
+    </div>
+  </body>
+</html>

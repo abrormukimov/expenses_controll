@@ -1,0 +1,14 @@
+<h2>My Ungrouped Expenses</h2>
+
+<%= render 'shared/total_expenses' %>
+
+	<div class="album py-5">
+    <div class="container">
+     	<div class="row">
+				<%= render 'expense', object: @expenses %>
+			</div>
+				<%= paginate @expenses %>			
+    </div>
+  </div>
+
+<%= render 'shared/new_expenses' %>

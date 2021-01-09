@@ -1,0 +1,26 @@
+<div class="col-md-4">
+  <div class="card mb-4 shadow-sm">
+    <%= add_group_img(group) %>
+    
+    <div class="card-body">
+    <h5 class="card-title"><%= link_to group.name, group_path(group), class: "group-name" %></h5>
+    <h6 class="card-title">Total Expense:<%= number_to_currency(group_expense(group)) %></h6>
+
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="btn-group">
+          <%= link_to "Edit", edit_group_path(group.id), class: "btn btn-sm btn-outline-secondary" %>
+          <%= link_to 'Delete', group_path(group), method: :delete, data: { confirm: 'Are you sure?'}, class: "btn btn-sm btn-outline-secondary" %>
+        </div>
+        <small class="text-muted"><strong><%= time_ago_in_words(group.created_at) %> ago</strong></small>
+      </div>
+    </div>
+  </div>
+</div>  
+
+
+
+
+
+
+
+

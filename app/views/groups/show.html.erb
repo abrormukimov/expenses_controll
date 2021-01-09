@@ -1,0 +1,53 @@
+
+ <div class="container marketing">
+ 	<div class="row">
+ 		<div class="col-lg-12">
+
+			<%= image_tag group_img(@group.icon.url), class: "bd-placeholder-img rounded-circle avatar-img" %>
+
+			<h2><strong><%= @group.name %></strong></h2>
+
+				<%= link_to 'Edit', edit_group_path(@group)%>
+          <%= link_to 'Back', groups_path %><hr>
+          
+    </div>
+  </div>
+
+</div>
+
+			<h4><strong>Items in this group:</strong></h4>
+			<div class="album py-5">
+			  <div class="container">
+				  <div class="row">
+			      <%= render 'expenses/expense', object: @grouped %>
+          </div>
+            <%= paginate @grouped %><hr>
+        
+        </div>
+      </div>
+			
+
+			<h4><strong>External Expenses:</strong></h4>
+			<div class="album py-5">
+			  <div class="container">
+				  <div class="row">
+            <%= render 'expenses/expense', object: @ungrouped %>
+            </div>
+            <%= paginate @ungrouped %>
+        
+        </div>
+      </div>
+
+
+
+
+
+
+	
+	
+
+	
+
+
+
+

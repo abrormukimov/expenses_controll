@@ -1,0 +1,19 @@
+
+ <div class="container marketing">
+ 	<div class="row">
+ 		<div class="col-lg-12">
+
+		<%= image_tag user_img(@user.userimage.url), class: "bd-placeholder-img rounded-circle avatar-img" %>
+		<h1 class = "avatar-name">Hey! <%= @user.username %></h1>
+        <h5 class = "home-link"><%= link_to 'My Expenses', expenses_path %></h5><hr>
+		<h5 class = "home-link"><%= link_to 'My External Expenses', extExpenses_path %></h5><hr>
+		<h5 class = "home-link"><%= link_to 'My Groups', groups_path %></h5>
+        
+      </div>
+ 	</div>
+
+ </div>
+
+
+
+

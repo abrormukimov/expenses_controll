@@ -1,0 +1,18 @@
+<h2 class= "avatar-name">My Groups</h2>
+
+ <div class="album py-5">
+    <div class="container">
+      <div class="row">
+
+				<%= render @groups %>
+
+			</div>
+			<%= paginate @groups %>
+
+    </div>
+  </div>
+
+<nav class="nav navbar fixed-bottom is-primary add-new has-text-centered">
+  <%= link_to "Add New Group", new_group_path, class: "add-new-btn d-flex flex-row p-3 px-md-4  shadow-sm text-decoration-none" %>
+</nav>
+
