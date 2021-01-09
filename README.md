@@ -2,7 +2,7 @@
 
 > Track and Group your Expenses
 
-![screenshot](app/assets/images/Login.png)
+![screenshot](app/assets/images/screenshot.png)
 
 
 Created with Ruby on Rails which helps you manage your Expenses and store Group images in AWS in Production Environment.
