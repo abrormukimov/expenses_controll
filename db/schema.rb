@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2020_07_24_115302) do
     t.integer "user_id", null: false
     t.index ["user_id"], name: "index_expenses_on_user_id"
   end
-
+ 
   create_table "group_expenses", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

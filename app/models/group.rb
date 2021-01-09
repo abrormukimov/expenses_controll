@@ -10,3 +10,4 @@ class Group < ApplicationRecord
 
   mount_uploader :icon, GroupUploader
 end
+ 
