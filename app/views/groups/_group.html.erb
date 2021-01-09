@@ -1,7 +1,7 @@
 <div class="col-md-4">
   <div class="card mb-4 shadow-sm">
     <%= add_group_img(group) %>
-     
+    
     <div class="card-body">
     <h5 class="card-title"><%= link_to group.name, group_path(group), class: "group-name" %></h5>
     <h6 class="card-title">Total Expense:<%= number_to_currency(group_expense(group)) %></h6>

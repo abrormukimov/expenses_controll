@@ -2,7 +2,7 @@ class ExpensesController < ApplicationController
   before_action :set_expense_item, only: %i[edit update destroy show]
   before_action :set_group_item, only: %i[new edit]
   layout 'group'
- 
+
   def new
     @expenses = Expense.new
   end
