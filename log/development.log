@@ -4307,3 +4307,607 @@ Processing by ExpensesController#index as HTML
 Completed 200 OK in 55ms (Views: 44.2ms | ActiveRecord: 2.3ms | Allocations: 22919)
 
 
+Started GET "/" for ::1 at 2021-01-09 20:49:40 +0500
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 820)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_application_nav.html.erb (Duration: 0.6ms | Allocations: 386)
+  Rendered shared/_alerts.html.erb (Duration: 0.3ms | Allocations: 129)
+  Rendered shared/_application_footer.html.erb (Duration: 0.3ms | Allocations: 107)
+Completed 200 OK in 86ms (Views: 70.9ms | ActiveRecord: 0.7ms | Allocations: 71147)
+
+
+Started GET "/" for ::1 at 2021-01-09 20:49:43 +0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 132)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_application_nav.html.erb (Duration: 0.8ms | Allocations: 214)
+  Rendered shared/_alerts.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered shared/_application_footer.html.erb (Duration: 0.1ms | Allocations: 13)
+Completed 200 OK in 31ms (Views: 25.3ms | ActiveRecord: 0.4ms | Allocations: 10868)
+
+
+Started GET "/" for ::1 at 2021-01-09 20:49:45 +0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 123)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_application_nav.html.erb (Duration: 0.4ms | Allocations: 206)
+  Rendered shared/_alerts.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered shared/_application_footer.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 26ms (Views: 21.2ms | ActiveRecord: 0.2ms | Allocations: 10863)
+
+
+Started GET "/expenses" for ::1 at 2021-01-09 20:49:49 +0500
+Processing by ExpensesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "expenses"."amount" FROM "expenses" WHERE "expenses"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/expense.rb:9:in `block in <class:Expense>'
+  Rendering expenses/index.html.erb within layouts/group
+  Rendered shared/_total_expenses.html.erb (Duration: 8.2ms | Allocations: 2689)
+  [1m[36mExpense Load (0.5ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = ? ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["user_id", 2], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/expenses/_expense.html.erb:1
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:26:in `add_exp_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:16:in `expense_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:18:in `expense_img'
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:26:in `add_exp_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:16:in `expense_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:18:in `expense_img'
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:26:in `add_exp_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:16:in `expense_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:18:in `expense_img'
+  Rendered expenses/_expense.html.erb (Duration: 37.5ms | Allocations: 28767)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "expenses" WHERE "expenses"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/expenses/index.html.erb:11
+  Rendered shared/_new_expenses.html.erb (Duration: 0.2ms | Allocations: 137)
+  Rendered expenses/index.html.erb within layouts/group (Duration: 51.7ms | Allocations: 35140)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_application_nav.html.erb (Duration: 0.2ms | Allocations: 219)
+  Rendered shared/_alerts.html.erb (Duration: 0.0ms | Allocations: 25)
+Completed 200 OK in 88ms (Views: 59.7ms | ActiveRecord: 5.0ms | Allocations: 52649)
+
+
+Started GET "/expenses" for ::1 at 2021-01-09 20:49:49 +0500
+Processing by ExpensesController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "expenses"."amount" FROM "expenses" WHERE "expenses"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/expense.rb:9:in `block in <class:Expense>'
+  Rendering expenses/index.html.erb within layouts/group
+  Rendered shared/_total_expenses.html.erb (Duration: 0.2ms | Allocations: 102)
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = ? ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["user_id", 2], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/expenses/_expense.html.erb:1
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:26:in `add_exp_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:16:in `expense_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:18:in `expense_img'
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:26:in `add_exp_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:16:in `expense_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:18:in `expense_img'
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:26:in `add_exp_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:16:in `expense_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:18:in `expense_img'
+  Rendered expenses/_expense.html.erb (Duration: 9.3ms | Allocations: 9622)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "expenses" WHERE "expenses"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/expenses/index.html.erb:11
+  Rendered shared/_new_expenses.html.erb (Duration: 0.0ms | Allocations: 35)
+  Rendered expenses/index.html.erb within layouts/group (Duration: 10.9ms | Allocations: 11193)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_application_nav.html.erb (Duration: 0.2ms | Allocations: 204)
+  Rendered shared/_alerts.html.erb (Duration: 0.0ms | Allocations: 23)
+Completed 200 OK in 26ms (Views: 21.2ms | ActiveRecord: 1.0ms | Allocations: 22826)
+
+
+Started GET "/expenses/4/edit" for ::1 at 2021-01-09 20:49:51 +0500
+Processing by ExpensesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/expenses_controller.rb:83:in `set_expense_item'
+  Rendering expenses/edit.html.erb within layouts/group
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/expenses/_form.html.erb:18
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "groups"."id" FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ?[0m  [["expense_id", 4]]
+  ↳ app/views/expenses/_form.html.erb:19
+  Rendered expenses/_form.html.erb (Duration: 16.4ms | Allocations: 6428)
+  Rendered expenses/edit.html.erb within layouts/group (Duration: 18.3ms | Allocations: 6980)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_application_nav.html.erb (Duration: 0.4ms | Allocations: 213)
+  Rendered shared/_alerts.html.erb (Duration: 0.1ms | Allocations: 25)
+Completed 200 OK in 43ms (Views: 33.2ms | ActiveRecord: 1.5ms | Allocations: 20700)
+
+
+Started GET "/expenses" for ::1 at 2021-01-09 20:49:52 +0500
+Processing by ExpensesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "expenses"."amount" FROM "expenses" WHERE "expenses"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/expense.rb:9:in `block in <class:Expense>'
+  Rendering expenses/index.html.erb within layouts/group
+  Rendered shared/_total_expenses.html.erb (Duration: 0.4ms | Allocations: 102)
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = ? ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["user_id", 2], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/expenses/_expense.html.erb:1
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:26:in `add_exp_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:16:in `expense_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:18:in `expense_img'
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:26:in `add_exp_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:16:in `expense_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:18:in `expense_img'
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:26:in `add_exp_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:16:in `expense_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:18:in `expense_img'
+  Rendered expenses/_expense.html.erb (Duration: 16.9ms | Allocations: 9622)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "expenses" WHERE "expenses"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/expenses/index.html.erb:11
+  Rendered shared/_new_expenses.html.erb (Duration: 0.1ms | Allocations: 35)
+  Rendered expenses/index.html.erb within layouts/group (Duration: 20.4ms | Allocations: 11195)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_application_nav.html.erb (Duration: 0.3ms | Allocations: 204)
+  Rendered shared/_alerts.html.erb (Duration: 0.0ms | Allocations: 23)
+Completed 200 OK in 41ms (Views: 33.0ms | ActiveRecord: 1.8ms | Allocations: 22842)
+
+
+Started GET "/expenses/4/edit" for ::1 at 2021-01-09 20:49:54 +0500
+Processing by ExpensesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/expenses_controller.rb:83:in `set_expense_item'
+  Rendering expenses/edit.html.erb within layouts/group
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/expenses/_form.html.erb:18
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "groups"."id" FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ?[0m  [["expense_id", 4]]
+  ↳ app/views/expenses/_form.html.erb:19
+  Rendered expenses/_form.html.erb (Duration: 11.4ms | Allocations: 3641)
+  Rendered expenses/edit.html.erb within layouts/group (Duration: 12.1ms | Allocations: 3980)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_application_nav.html.erb (Duration: 0.4ms | Allocations: 203)
+  Rendered shared/_alerts.html.erb (Duration: 0.1ms | Allocations: 23)
+Completed 200 OK in 47ms (Views: 40.2ms | ActiveRecord: 1.1ms | Allocations: 27151)
+
+
+Started PATCH "/expenses/4" for ::1 at 2021-01-09 20:49:57 +0500
+Processing by ExpensesController#update as HTML
+  Parameters: {"authenticity_token"=>"E4VQnsVgvZ6lFPCY1143L3KT3UcZjah742lgfHK4FI4H9Bcf1oio8bTXcquZ6n8ki+ue0tU3AyF+9OTQ9fgB6Q==", "expense"=>{"name"=>"Coffee", "amount"=>"3.0", "group_ids"=>["4"]}, "commit"=>"Save Expense", "id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.2ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/expenses_controller.rb:83:in `set_expense_item'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/expenses_controller.rb:55:in `block in update'
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/expenses_controller.rb:55:in `block in update'
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ?[0m  [["expense_id", 4]]
+  ↳ app/controllers/expenses_controller.rb:55:in `block in update'
+  [1m[36mGroupExpense Load (0.1ms)[0m  [1m[34mSELECT "group_expenses".* FROM "group_expenses" WHERE "group_expenses"."expense_id" = ? AND "group_expenses"."group_id" = ?[0m  [["expense_id", 4], ["group_id", 3]]
+  ↳ app/controllers/expenses_controller.rb:55:in `block in update'
+  [1m[36mGroupExpense Destroy (1.1ms)[0m  [1m[31mDELETE FROM "group_expenses" WHERE "group_expenses"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/expenses_controller.rb:55:in `block in update'
+  [1m[36mGroupExpense Create (0.2ms)[0m  [1m[32mINSERT INTO "group_expenses" ("created_at", "updated_at", "expense_id", "group_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2021-01-09 15:49:57.239088"], ["updated_at", "2021-01-09 15:49:57.239088"], ["expense_id", 4], ["group_id", 4]]
+  ↳ app/controllers/expenses_controller.rb:55:in `block in update'
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/expenses_controller.rb:55:in `block in update'
+Redirected to http://localhost:3000/expenses
+Completed 302 Found in 34ms (ActiveRecord: 4.3ms | Allocations: 14806)
+
+
+Started GET "/expenses" for ::1 at 2021-01-09 20:49:57 +0500
+Processing by ExpensesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "expenses"."amount" FROM "expenses" WHERE "expenses"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/expense.rb:9:in `block in <class:Expense>'
+  Rendering expenses/index.html.erb within layouts/group
+  Rendered shared/_total_expenses.html.erb (Duration: 0.3ms | Allocations: 102)
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = ? ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["user_id", 2], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/expenses/_expense.html.erb:1
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:26:in `add_exp_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:16:in `expense_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:18:in `expense_img'
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:26:in `add_exp_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:16:in `expense_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:18:in `expense_img'
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:26:in `add_exp_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:16:in `expense_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:18:in `expense_img'
+  Rendered expenses/_expense.html.erb (Duration: 11.6ms | Allocations: 9616)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "expenses" WHERE "expenses"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/expenses/index.html.erb:11
+  Rendered shared/_new_expenses.html.erb (Duration: 0.1ms | Allocations: 34)
+  Rendered expenses/index.html.erb within layouts/group (Duration: 14.1ms | Allocations: 11184)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_application_nav.html.erb (Duration: 0.2ms | Allocations: 204)
+  Rendered shared/_alerts.html.erb (Duration: 0.0ms | Allocations: 25)
+Completed 200 OK in 28ms (Views: 22.5ms | ActiveRecord: 1.1ms | Allocations: 22824)
+
+
+Started GET "/expenses" for ::1 at 2021-01-09 20:50:01 +0500
+Processing by ExpensesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "expenses"."amount" FROM "expenses" WHERE "expenses"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/expense.rb:9:in `block in <class:Expense>'
+  Rendering expenses/index.html.erb within layouts/group
+  Rendered shared/_total_expenses.html.erb (Duration: 0.7ms | Allocations: 102)
+  [1m[36mExpense Load (0.9ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = ? ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["user_id", 2], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/expenses/_expense.html.erb:1
+  [1m[36mGroup Load (0.6ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:26:in `add_exp_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:16:in `expense_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:18:in `expense_img'
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:26:in `add_exp_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:16:in `expense_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:18:in `expense_img'
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:26:in `add_exp_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:16:in `expense_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:18:in `expense_img'
+  Rendered expenses/_expense.html.erb (Duration: 24.4ms | Allocations: 9616)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "expenses" WHERE "expenses"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/expenses/index.html.erb:11
+  Rendered shared/_new_expenses.html.erb (Duration: 0.1ms | Allocations: 34)
+  Rendered expenses/index.html.erb within layouts/group (Duration: 28.5ms | Allocations: 11183)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_application_nav.html.erb (Duration: 0.3ms | Allocations: 204)
+  Rendered shared/_alerts.html.erb (Duration: 0.0ms | Allocations: 23)
+Completed 200 OK in 51ms (Views: 39.9ms | ActiveRecord: 3.0ms | Allocations: 22808)
+
+
+Started GET "/expenses/4/edit" for ::1 at 2021-01-09 20:50:03 +0500
+Processing by ExpensesController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.1ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/expenses_controller.rb:83:in `set_expense_item'
+  Rendering expenses/edit.html.erb within layouts/group
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/expenses/_form.html.erb:18
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "groups"."id" FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ?[0m  [["expense_id", 4]]
+  ↳ app/views/expenses/_form.html.erb:19
+  Rendered expenses/_form.html.erb (Duration: 8.4ms | Allocations: 2657)
+  Rendered expenses/edit.html.erb within layouts/group (Duration: 8.7ms | Allocations: 2718)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_application_nav.html.erb (Duration: 0.4ms | Allocations: 203)
+  Rendered shared/_alerts.html.erb (Duration: 0.1ms | Allocations: 23)
+Completed 200 OK in 33ms (Views: 27.4ms | ActiveRecord: 0.9ms | Allocations: 14014)
+
+
+Started PATCH "/expenses/4" for ::1 at 2021-01-09 20:50:05 +0500
+Processing by ExpensesController#update as HTML
+  Parameters: {"authenticity_token"=>"rxfaJ1TNjMhZc8ITUuD+fskkQdQmcLsT0YsVZSd/IkG7Zp2mRyWZp0iwQCAcVLZ1MFwCQerKEElMFpHJoD83Jg==", "expense"=>{"name"=>"Coffee", "amount"=>"3.0", "group_ids"=>["4"]}, "commit"=>"Save Expense", "id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/expenses_controller.rb:83:in `set_expense_item'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/expenses_controller.rb:55:in `block in update'
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/expenses_controller.rb:55:in `block in update'
+  [1m[36mGroup Load (0.1ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ?[0m  [["expense_id", 4]]
+  ↳ app/controllers/expenses_controller.rb:55:in `block in update'
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/expenses_controller.rb:55:in `block in update'
+Redirected to http://localhost:3000/expenses
+Completed 302 Found in 17ms (ActiveRecord: 1.4ms | Allocations: 6026)
+
+
+Started GET "/expenses" for ::1 at 2021-01-09 20:50:05 +0500
+Processing by ExpensesController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "expenses"."amount" FROM "expenses" WHERE "expenses"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/expense.rb:9:in `block in <class:Expense>'
+  Rendering expenses/index.html.erb within layouts/group
+  Rendered shared/_total_expenses.html.erb (Duration: 0.3ms | Allocations: 102)
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = ? ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["user_id", 2], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/expenses/_expense.html.erb:1
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:26:in `add_exp_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:16:in `expense_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:18:in `expense_img'
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:26:in `add_exp_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:16:in `expense_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:18:in `expense_img'
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:26:in `add_exp_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:16:in `expense_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:18:in `expense_img'
+  Rendered expenses/_expense.html.erb (Duration: 17.8ms | Allocations: 9616)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "expenses" WHERE "expenses"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/expenses/index.html.erb:11
+  Rendered shared/_new_expenses.html.erb (Duration: 0.1ms | Allocations: 34)
+  Rendered expenses/index.html.erb within layouts/group (Duration: 20.7ms | Allocations: 11183)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_application_nav.html.erb (Duration: 0.3ms | Allocations: 204)
+  Rendered shared/_alerts.html.erb (Duration: 0.1ms | Allocations: 25)
+Completed 200 OK in 36ms (Views: 30.1ms | ActiveRecord: 1.7ms | Allocations: 22845)
+
+
+Started GET "/groups" for ::1 at 2021-01-09 20:50:09 +0500
+Processing by GroupsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering groups/index.html.erb within layouts/group
+  [1m[36mGroup Load (0.4ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."user_id" = ? ORDER BY name asc LIMIT ? OFFSET ?[0m  [["user_id", 2], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/groups/index.html.erb:7
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "expenses"."amount" FROM "expenses" INNER JOIN "group_expenses" ON "expenses"."id" = "group_expenses"."expense_id" WHERE "group_expenses"."group_id" = ?[0m  [["group_id", 4]]
+  ↳ app/helpers/groups_helper.rb:11:in `group_expense'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "expenses"."amount" FROM "expenses" INNER JOIN "group_expenses" ON "expenses"."id" = "group_expenses"."expense_id" WHERE "group_expenses"."group_id" = ?[0m  [["group_id", 3]]
+  ↳ app/helpers/groups_helper.rb:11:in `group_expense'
+  Rendered collection of groups/_group.html.erb [2 times] (Duration: 9.2ms | Allocations: 4287)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "groups" WHERE "groups"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/groups/index.html.erb:10
+  Rendered groups/index.html.erb within layouts/group (Duration: 14.5ms | Allocations: 6305)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_application_nav.html.erb (Duration: 0.4ms | Allocations: 216)
+  Rendered shared/_alerts.html.erb (Duration: 0.1ms | Allocations: 25)
+Completed 200 OK in 32ms (Views: 26.5ms | ActiveRecord: 1.3ms | Allocations: 17611)
+
+
+Started GET "/groups/4" for ::1 at 2021-01-09 20:50:11 +0500
+Processing by GroupsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:59:in `set_group_item'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/groups_controller.rb:47:in `show'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "expenses"."id" FROM "expenses" WHERE "expenses"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/expense.rb:12:in `block in <class:Expense>'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "group_expenses"."expense_id" FROM "group_expenses" WHERE "group_expenses"."expense_id" IN (?, ?, ?, ?)[0m  [["expense_id", 1], ["expense_id", 3], ["expense_id", 4], ["expense_id", 6]]
+  ↳ app/models/expense.rb:12:in `block in <class:Expense>'
+  Rendering groups/show.html.erb within layouts/group
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" INNER JOIN "group_expenses" ON "expenses"."id" = "group_expenses"."expense_id" WHERE "group_expenses"."group_id" = ? ORDER BY expenses.created_at desc LIMIT ? OFFSET ?[0m  [["group_id", 4], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/expenses/_expense.html.erb:1
+  [1m[36mGroup Load (0.2ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:26:in `add_exp_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:16:in `expense_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:18:in `expense_img'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/expenses/_expense.html.erb:7
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" NOT IN (?, ?, ?, ?) AND "expenses"."user_id" = ? ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 6], ["user_id", 2], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/helpers/expenses_helper.rb:3:in `add_remove'
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:26:in `add_exp_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:16:in `expense_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:18:in `expense_img'
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/expenses/_expense.html.erb:7
+  Rendered expenses/_expense.html.erb (Duration: 19.3ms | Allocations: 9384)
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "expenses" INNER JOIN "group_expenses" ON "expenses"."id" = "group_expenses"."expense_id" WHERE "group_expenses"."group_id" = ?[0m  [["group_id", 4]]
+  ↳ app/views/groups/show.html.erb:24
+  Rendered expenses/_expense.html.erb (Duration: 0.0ms | Allocations: 6)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "expenses" WHERE "expenses"."id" NOT IN (?, ?, ?, ?) AND "expenses"."user_id" = ?[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 6], ["user_id", 2]]
+  ↳ app/views/groups/show.html.erb:36
+  Rendered groups/show.html.erb within layouts/group (Duration: 23.6ms | Allocations: 11565)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_application_nav.html.erb (Duration: 0.4ms | Allocations: 213)
+  Rendered shared/_alerts.html.erb (Duration: 0.0ms | Allocations: 25)
+Completed 200 OK in 60ms (Views: 32.5ms | ActiveRecord: 3.4ms | Allocations: 25597)
+
+
+Started GET "/extExpenses" for ::1 at 2021-01-09 20:50:16 +0500
+Processing by ExpensesController#external_expense as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "expenses"."id" FROM "expenses" WHERE "expenses"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/expense.rb:12:in `block in <class:Expense>'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "group_expenses"."expense_id" FROM "group_expenses" WHERE "group_expenses"."expense_id" IN (?, ?, ?, ?)[0m  [["expense_id", 1], ["expense_id", 3], ["expense_id", 4], ["expense_id", 6]]
+  ↳ app/models/expense.rb:12:in `block in <class:Expense>'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "expenses"."id" FROM "expenses" WHERE "expenses"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/expense.rb:12:in `block in <class:Expense>'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "group_expenses"."expense_id" FROM "group_expenses" WHERE "group_expenses"."expense_id" IN (?, ?, ?, ?)[0m  [["expense_id", 1], ["expense_id", 3], ["expense_id", 4], ["expense_id", 6]]
+  ↳ app/models/expense.rb:12:in `block in <class:Expense>'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "expenses"."amount" FROM "expenses" WHERE "expenses"."id" NOT IN (?, ?, ?, ?) AND "expenses"."user_id" = ?[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 6], ["user_id", 2]]
+  ↳ app/models/expense.rb:9:in `block in <class:Expense>'
+  Rendering expenses/external_expense.html.erb within layouts/group
+  Rendered shared/_total_expenses.html.erb (Duration: 0.4ms | Allocations: 105)
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" NOT IN (?, ?, ?, ?) AND "expenses"."user_id" = ? ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 6], ["user_id", 2], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/expenses/_expense.html.erb:1
+  Rendered expenses/_expense.html.erb (Duration: 1.8ms | Allocations: 710)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "expenses" WHERE "expenses"."id" NOT IN (?, ?, ?, ?) AND "expenses"."user_id" = ?[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 6], ["user_id", 2]]
+  ↳ app/views/expenses/external_expense.html.erb:10
+  Rendered shared/_new_expenses.html.erb (Duration: 0.2ms | Allocations: 49)
+  Rendered expenses/external_expense.html.erb within layouts/group (Duration: 5.4ms | Allocations: 2058)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_application_nav.html.erb (Duration: 0.4ms | Allocations: 215)
+  Rendered shared/_alerts.html.erb (Duration: 0.1ms | Allocations: 25)
+Completed 200 OK in 35ms (Views: 19.1ms | ActiveRecord: 2.0ms | Allocations: 16481)
+
+
+Started GET "/edit.2" for ::1 at 2021-01-09 20:50:19 +0500
+Processing by Devise::RegistrationsController#edit as 
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering devise/registrations/edit.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 199)
+  Rendered devise/registrations/edit.html.erb within layouts/application (Duration: 8.8ms | Allocations: 2741)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_application_nav.html.erb (Duration: 0.4ms | Allocations: 219)
+  Rendered shared/_alerts.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered shared/_application_footer.html.erb (Duration: 0.0ms | Allocations: 14)
+Completed 200 OK in 35ms (Views: 28.5ms | ActiveRecord: 0.6ms | Allocations: 15501)
+
+
+Started GET "/extExpenses" for ::1 at 2021-01-09 20:50:29 +0500
+Processing by ExpensesController#external_expense as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "expenses"."id" FROM "expenses" WHERE "expenses"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/expense.rb:12:in `block in <class:Expense>'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "group_expenses"."expense_id" FROM "group_expenses" WHERE "group_expenses"."expense_id" IN (?, ?, ?, ?)[0m  [["expense_id", 1], ["expense_id", 3], ["expense_id", 4], ["expense_id", 6]]
+  ↳ app/models/expense.rb:12:in `block in <class:Expense>'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "expenses"."id" FROM "expenses" WHERE "expenses"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/expense.rb:12:in `block in <class:Expense>'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "group_expenses"."expense_id" FROM "group_expenses" WHERE "group_expenses"."expense_id" IN (?, ?, ?, ?)[0m  [["expense_id", 1], ["expense_id", 3], ["expense_id", 4], ["expense_id", 6]]
+  ↳ app/models/expense.rb:12:in `block in <class:Expense>'
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "expenses"."amount" FROM "expenses" WHERE "expenses"."id" NOT IN (?, ?, ?, ?) AND "expenses"."user_id" = ?[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 6], ["user_id", 2]]
+  ↳ app/models/expense.rb:9:in `block in <class:Expense>'
+  Rendering expenses/external_expense.html.erb within layouts/group
+  Rendered shared/_total_expenses.html.erb (Duration: 0.5ms | Allocations: 105)
+  [1m[36mExpense Load (0.4ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" NOT IN (?, ?, ?, ?) AND "expenses"."user_id" = ? ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 6], ["user_id", 2], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/expenses/_expense.html.erb:1
+  Rendered expenses/_expense.html.erb (Duration: 1.9ms | Allocations: 710)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "expenses" WHERE "expenses"."id" NOT IN (?, ?, ?, ?) AND "expenses"."user_id" = ?[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 6], ["user_id", 2]]
+  ↳ app/views/expenses/external_expense.html.erb:10
+  Rendered shared/_new_expenses.html.erb (Duration: 0.2ms | Allocations: 49)
+  Rendered expenses/external_expense.html.erb within layouts/group (Duration: 5.1ms | Allocations: 1895)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_application_nav.html.erb (Duration: 0.6ms | Allocations: 215)
+  Rendered shared/_alerts.html.erb (Duration: 0.1ms | Allocations: 25)
+Completed 200 OK in 37ms (Views: 21.3ms | ActiveRecord: 2.3ms | Allocations: 16191)
+
+
+Started GET "/extExpenses" for ::1 at 2021-01-09 20:50:30 +0500
+Processing by ExpensesController#external_expense as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "expenses"."id" FROM "expenses" WHERE "expenses"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/expense.rb:12:in `block in <class:Expense>'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "group_expenses"."expense_id" FROM "group_expenses" WHERE "group_expenses"."expense_id" IN (?, ?, ?, ?)[0m  [["expense_id", 1], ["expense_id", 3], ["expense_id", 4], ["expense_id", 6]]
+  ↳ app/models/expense.rb:12:in `block in <class:Expense>'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "expenses"."id" FROM "expenses" WHERE "expenses"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/expense.rb:12:in `block in <class:Expense>'
+  [1m[35mCACHE  (0.0ms)[0m  [1m[34mSELECT "group_expenses"."expense_id" FROM "group_expenses" WHERE "group_expenses"."expense_id" IN (?, ?, ?, ?)[0m  [["expense_id", 1], ["expense_id", 3], ["expense_id", 4], ["expense_id", 6]]
+  ↳ app/models/expense.rb:12:in `block in <class:Expense>'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "expenses"."amount" FROM "expenses" WHERE "expenses"."id" NOT IN (?, ?, ?, ?) AND "expenses"."user_id" = ?[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 6], ["user_id", 2]]
+  ↳ app/models/expense.rb:9:in `block in <class:Expense>'
+  Rendering expenses/external_expense.html.erb within layouts/group
+  Rendered shared/_total_expenses.html.erb (Duration: 0.2ms | Allocations: 105)
+  [1m[36mExpense Load (0.3ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."id" NOT IN (?, ?, ?, ?) AND "expenses"."user_id" = ? ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 6], ["user_id", 2], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/expenses/_expense.html.erb:1
+  Rendered expenses/_expense.html.erb (Duration: 1.9ms | Allocations: 1303)
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "expenses" WHERE "expenses"."id" NOT IN (?, ?, ?, ?) AND "expenses"."user_id" = ?[0m  [["id", 1], ["id", 3], ["id", 4], ["id", 6], ["user_id", 2]]
+  ↳ app/views/expenses/external_expense.html.erb:10
+  Rendered shared/_new_expenses.html.erb (Duration: 0.1ms | Allocations: 44)
+  Rendered expenses/external_expense.html.erb within layouts/group (Duration: 8.0ms | Allocations: 6684)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_application_nav.html.erb (Duration: 0.2ms | Allocations: 204)
+  Rendered shared/_alerts.html.erb (Duration: 0.0ms | Allocations: 23)
+Completed 200 OK in 36ms (Views: 24.8ms | ActiveRecord: 1.6ms | Allocations: 36593)
+
+
+Started GET "/expenses/new" for ::1 at 2021-01-09 20:51:01 +0500
+Processing by ExpensesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering expenses/new.html.erb within layouts/group
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups" WHERE "groups"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/expenses/_form.html.erb:18
+  Rendered expenses/_form.html.erb (Duration: 22.7ms | Allocations: 7379)
+  Rendered expenses/new.html.erb within layouts/group (Duration: 23.8ms | Allocations: 7538)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_application_nav.html.erb (Duration: 0.4ms | Allocations: 213)
+  Rendered shared/_alerts.html.erb (Duration: 0.1ms | Allocations: 25)
+Completed 200 OK in 46ms (Views: 40.1ms | ActiveRecord: 0.6ms | Allocations: 18358)
+
+
+Started GET "/expenses" for ::1 at 2021-01-09 20:51:02 +0500
+Processing by ExpensesController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "expenses"."amount" FROM "expenses" WHERE "expenses"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/models/expense.rb:9:in `block in <class:Expense>'
+  Rendering expenses/index.html.erb within layouts/group
+  Rendered shared/_total_expenses.html.erb (Duration: 0.5ms | Allocations: 102)
+  [1m[36mExpense Load (0.7ms)[0m  [1m[34mSELECT "expenses".* FROM "expenses" WHERE "expenses"."user_id" = ? ORDER BY created_at desc LIMIT ? OFFSET ?[0m  [["user_id", 2], ["LIMIT", 3], ["OFFSET", 0]]
+  ↳ app/views/expenses/_expense.html.erb:1
+  [1m[36mGroup Load (0.5ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:26:in `add_exp_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:16:in `expense_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 6], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:18:in `expense_img'
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:26:in `add_exp_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:16:in `expense_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 4], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:18:in `expense_img'
+  [1m[36mGroup Load (0.3ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:26:in `add_exp_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:16:in `expense_img'
+  [1m[36mCACHE Group Load (0.0ms)[0m  [1m[34mSELECT "groups".* FROM "groups" INNER JOIN "group_expenses" ON "groups"."id" = "group_expenses"."group_id" WHERE "group_expenses"."expense_id" = ? ORDER BY "groups"."id" ASC LIMIT ?[0m  [["expense_id", 3], ["LIMIT", 1]]
+  ↳ app/helpers/expenses_helper.rb:18:in `expense_img'
+  Rendered expenses/_expense.html.erb (Duration: 28.8ms | Allocations: 9622)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "expenses" WHERE "expenses"."user_id" = ?[0m  [["user_id", 2]]
+  ↳ app/views/expenses/index.html.erb:11
+  Rendered shared/_new_expenses.html.erb (Duration: 0.1ms | Allocations: 35)
+  Rendered expenses/index.html.erb within layouts/group (Duration: 32.2ms | Allocations: 11194)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_application_nav.html.erb (Duration: 0.3ms | Allocations: 204)
+  Rendered shared/_alerts.html.erb (Duration: 0.0ms | Allocations: 23)
+Completed 200 OK in 54ms (Views: 43.5ms | ActiveRecord: 2.7ms | Allocations: 22821)
+
+
+Started GET "/" for ::1 at 2021-01-09 20:51:06 +0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 131)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_application_nav.html.erb (Duration: 0.4ms | Allocations: 214)
+  Rendered shared/_alerts.html.erb (Duration: 0.1ms | Allocations: 25)
+  Rendered shared/_application_footer.html.erb (Duration: 0.1ms | Allocations: 14)
+Completed 200 OK in 26ms (Views: 22.1ms | ActiveRecord: 0.3ms | Allocations: 10959)
+
+
+Started GET "/" for ::1 at 2021-01-09 20:51:06 +0500
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering users/index.html.erb within layouts/application
+  Rendered users/index.html.erb within layouts/application (Duration: 0.3ms | Allocations: 122)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_application_nav.html.erb (Duration: 0.4ms | Allocations: 206)
+  Rendered shared/_alerts.html.erb (Duration: 0.1ms | Allocations: 23)
+  Rendered shared/_application_footer.html.erb (Duration: 0.0ms | Allocations: 13)
+Completed 200 OK in 22ms (Views: 17.6ms | ActiveRecord: 0.3ms | Allocations: 10843)
+
+
