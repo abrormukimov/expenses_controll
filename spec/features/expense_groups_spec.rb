@@ -22,4 +22,3 @@ feature 'create a expense with a group' do
     end
   end
 end
- 

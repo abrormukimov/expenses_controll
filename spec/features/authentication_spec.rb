@@ -42,4 +42,3 @@ feature 'sign in process' do
     end
   end
 end
- 

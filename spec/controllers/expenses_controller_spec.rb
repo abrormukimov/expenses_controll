@@ -94,4 +94,3 @@ RSpec.describe ExpensesController, type: :controller do
     end
   end
 end
- 

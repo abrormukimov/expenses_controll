@@ -4,4 +4,3 @@ FactoryBot.define do
     group_id { 1 }
   end
 end
- 

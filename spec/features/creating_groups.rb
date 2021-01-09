@@ -36,4 +36,3 @@ feature 'create a group' do
     end
   end
 end
- 
