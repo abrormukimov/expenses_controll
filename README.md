@@ -16,8 +16,6 @@ Created with Ruby on Rails which helps you manage your Expenses and store Group 
 
 ## Live Demo
 
-- [Live Demo Link](https://rajda-expense-mgmt.herokuapp.com)
-
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
