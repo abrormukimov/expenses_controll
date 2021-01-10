@@ -63,7 +63,7 @@ group :production do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'aws-sdk-s3'
+gem 'aws-sdk-s3', require: false
 gem 'carrierwave', '~> 2.1'
 gem 'carrierwave-aws', '~> 1.5'
 gem 'devcamp_view_tool', git: 'https://github.com/rajkumardas2701/devcamp_view_tool'
